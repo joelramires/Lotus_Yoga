@@ -1,0 +1,228 @@
+:root {
+  --accent: #cbe3d4;
+  --text: #333;
+  --bg: #fff;
+  --soft: #f9f6f2;
+  --duck-egg-blue: #d6ede5;
+  --white: #ffffff;
+  --gunmetal: #2e3a3f;
+  --accent: #7a9c87; /* optional for link */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  max-width: 600px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: white;
+  max-width: 90%;
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.hero-text .Find-Your-Peace {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.your-journey-starts {
+  font-family: "Lato", sans-serif;
+  max-width: 90%;
+  margin: 12px 0 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: 1.5px;
+  text-align: left;
+  color: white;
+}
+.menu-icon {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+header {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.menu-links {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  gap: 36px;
+  padding-right: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.menu-links a:hover {
+  opacity: 0.7;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg);
+  font-weight: bold;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+.intro-section {
+  max-width: 90%;
+  margin: 60px auto 80px;
+  padding: 0 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-align: center;
+  color: black;
+}
+
+.highlight {
+ max-width: 684px; 
+  margin: 38px auto 101px; 
+  padding: 0 1rem; 
+  font-family: Lato, sans-serif;
+  font-size: 1rem; 
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  color: var(--black);
+}
+
+.Lotus-heading {
+   font-family: "Cormorant Garamond", serif;
+  font-size: 1.875rem; /* 30px */
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: 0.18em;
+  color: #5a7669;
+  max-width: 684px;     
+  margin: 20px auto;    
+  padding: 0 1rem;      
+  text-align: left; 
+}
+
+.class-schedule-feature {
+  width: 100vw;    
+  margin: 0;         
+  padding: 0;        
+}
+
+.class-schedule-feature img {
+  display: block;
+  width: 100vw;      
+  height: auto;      
+}
+
+.footer {
+  background-color: var(--soft);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 1.3px;
+  font-size: 13px;
+}

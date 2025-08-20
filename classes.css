@@ -1,0 +1,395 @@
+:root {
+  --accent: #cbe3d4;
+  --text: #333;
+  --bg: #fff;
+  --soft: #f9f6f2;
+  --duck-egg-blue: #d6ede5;
+  --white: #ffffff;
+  --gunmetal: #2e3a3f;
+  --accent: #7a9c87; /* optional for link */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%);
+  color: white;
+  text-align: left;
+  padding: 1rem;
+  max-width: 600px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+  color: white;
+  max-width: 90%;
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.hero-text .Find-Your-Peace {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 5rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 3px;
+  color: white;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.your-journey-starts {
+  font-family: "Lato", sans-serif;
+  max-width: 90%;
+  margin: 12px 0 0 0;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: 1.5px;
+  text-align: left;
+  color: white;
+}
+.menu-icon {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+header {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background: transparent;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.menu-links {
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  gap: 36px;
+  padding-right: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.menu-links a:hover {
+  opacity: 0.7;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg);
+  font-weight: bold;
+}
+
+section {
+  padding: 40px 20px;
+}
+.quote {
+  background-color: #f2eae3;
+  text-align: center;
+  font-style: italic;
+  padding: 40px 20px;
+  color: var(--text);
+}
+
+.intro-section {
+  max-width: 90%;
+  margin: 60px auto 80px;
+  padding: 0 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.left-Green-BG {
+  background-color: var(--duck-egg-blue);
+  padding: 60px 20px;
+}
+
+.left-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.left-image {
+  flex: 1 1 45%;
+  z-index: 1;
+}
+
+.left-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.left-Text-BG {
+  flex: 1 1 55%;
+  background-color: white;
+  padding: 60px;
+  margin-left: -80px; /* keeps overlapping effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  position: relative;
+  min-height: 500px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.left-Text-BG h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gunmetal);
+  margin-bottom: 16px;
+}
+
+.left-Text-BG p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.left-Text-BG a {
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.Bikram-Green-BG {
+  background-color: var(--duck-egg-blue);
+  padding: 100px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.bikram-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+}
+
+.bikram-text-box {
+ flex: 1 1 55%;
+  background-color: white;
+  padding: 60px;
+  margin-right: -60px; /* pulls over image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  position: relative;
+  min-height: 500px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bikram-text-box h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gunmetal);
+  margin-bottom: 16px;
+}
+
+.bikram-text-box p {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.bikram-text-box a {
+  font-weight: bold;
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.bikram-image {
+  flex: 1 1 45%;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  z-index: 1;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .bikram-container {
+    
+    padding: 0 10px;
+  }
+
+  .bikram-text-box {
+    margin: 0;
+     padding: 32px;
+  }
+
+  
+}
+
+@media (max-width: 768px) {
+  .left-layout {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .left-Text-BG {
+    padding: 32px;
+    margin-left: 0;
+  }
+  *{
+    box-sizing: revert;
+  }
+
+  
+}
+.class-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--soft);
+  padding: 20px;
+}
+
+.class-image {
+  flex: 1 1 300px;
+  max-width: 400px;
+  object-fit: cover;
+}
+
+.class-text {
+  flex: 1 1 300px;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.class-text h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.class-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.class-text a {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.class-text a:hover {
+  text-decoration: underline;
+}
+
+
+.footer {
+  background-color: var(--soft);
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-menu {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 10px 0;
+  list-style: none;
+}
+
+.footer-menu li a {
+  text-decoration: none;
+  color: var(--text);
+  letter-spacing: 1.3px;
+  font-size: 13px;
+}
