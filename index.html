@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
   <section class="hero">
@@ -27,7 +28,17 @@
       class="logo-img"
     />
     </div>
-    <div class="menu-links">
+
+    <!-- Hamburger button (mobile only) -->
+<button class="nav-toggle" aria-label="Toggle menu"
+        aria-controls="primary-menu" aria-expanded="false">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
+
+    <div class="menu-links" id="primary-menu">
       <a href="./classes.html">Classes</a>
       <a href="./classes.html">Schedule</a>
       <a href="./about.html">About</a>
@@ -136,41 +147,41 @@ At Lotus we believe body, mind and spirit are like a tripod – even if one aspe
   </section>
 </section>
 
-  <section class="cta-banner">
-  <!-- <div class="cta-content">
-     <h3>BREATHE. EXHALE. REPEAT.</h3> -->
-    <!-- <a href="#join" class="cta-button">JOIN US</a> -->
-  <!-- </div> --> 
+<section class="cta-banner-mobile">
+  <img src="assets/images/mobile-cta@2x.png" alt="Meditation by lake">
+  <div class="cta-mobile-content">
+    <!-- <a href="#join" class="cta-mobile-btn">JOIN US</a> -->
+  </div>
 </section>
 
 <div class="contact-row">
   <form class="contact-form">
     <h3 class="Contact-Us">Contact Us</h3>
+
     <input class="name-rectangle" type="text" placeholder="Name" />
-
-    <div class="form-row">
-      <input class="name-rectangle" type="email" placeholder="Email / Message" />
-      <div class="socialize">
-        <h3 class="Socialize-With-Us">Socialize With Us</h3>
-        <div class="socials">
-  <a href="https://www.facebook.com" target="_blank">
-    <img src="assets/icons/faceboook-icon.png" alt="Facebook" class="social-icon" />
-  </a>
-  <a href="https://www.instagram.com" target="_blank">
-    <img src="assets/icons/instagram-icon.png" alt="Instagram" class="social-icon" />
-  </a>
-  <a href="https://www.twitter.com" target="_blank">
-    <img src="assets/icons/twitter-icon.png" alt="Twitter" class="social-icon" />
-  </a>
-</div>
-      </div>
-    </div>
-
+    <input class="name-rectangle" type="email" placeholder="Email Address" />
     <input class="name-rectangle subject" type="text" placeholder="Subject" />
     <textarea class="message-rectangle" rows="4" placeholder="Type your message..."></textarea>
-    <button class="Send-Button-BG" type="submit">Send</button>
+
+    <button class="Send-Button-BG" type="submit">SEND</button>
   </form>
+
+  <section class="socialize-panel">
+    <h3 class="Socialize-With-Us">Socialize With Us</h3>
+    <div class="socials">
+      <a href="https://www.facebook.com" target="_blank">
+        <img src="assets/icons/faceboook-icon.png" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com" target="_blank">
+        <img src="assets/icons/instagram-icon.png" alt="Instagram" class="social-icon" />
+      </a>
+      <a href="https://www.twitter.com" target="_blank">
+        <img src="assets/icons/twitter-icon.png" alt="Twitter" class="social-icon" />
+      </a>
+    </div>
+  </section>
 </div>
+
 
 <div class="bottom-hero-section">
   <img src="./assets/images/bottom-hero@2x.jpg" alt="Find Your Breath" class="bottom-hero-image" />
@@ -187,6 +198,30 @@ At Lotus we believe body, mind and spirit are like a tripod – even if one aspe
   </nav>
   <p class="copyright">&copy; 2025 Lotus. All rights reserved.</p>
 </footer>
+
+
+<script>
+  (function () {
+    function initMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.menu-links');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('active');
+        toggle.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        console.log('menu active?', open);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMenu);
+    } else {
+      initMenu();
+    }
+  })();
+</script>
 
 </body>
 </html>

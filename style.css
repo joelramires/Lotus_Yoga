@@ -138,14 +138,14 @@
   opacity: 0.7;
 }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 20px;
-      background: var(--bg);
-      font-weight: bold;
-    }
+   .footer-nav nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg);
+  font-weight: bold;
+}
 
     section {
       padding: 40px 20px;
@@ -810,5 +810,383 @@ input.subject {
   }
 }
   
+/* Hide hamburger by default */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
 
-  
+/* Hamburger lines */
+.nav-toggle .bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: #fff; /* make white over hero */
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* Mobile menu behavior */
+@media (max-width: 767px) {
+
+  /* Show hamburger */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 999;
+  }
+
+  /* Hide menu links until toggled */
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  /* When active */
+  .menu-links.active {
+    display: flex;
+  }
+
+  .menu-links a {
+    padding: 14px 0;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+  }
+}
+
+.top-nav {
+  position: absolute;
+  width: 100%;
+  z-index: 2000;
+  background: transparent !important; /* beats generic footer nav styles */
+}
+
+/* Make the hamburger always visible */
+.nav-toggle .bar {
+  background: #fff;
+}
+
+/* PHONE ONLY */
+@media (max-width: 767px) {
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 2001; /* above the dropdown */
+  }
+
+  /* Hidden until toggled */
+  .top-nav .menu-links {
+    display: none !important;
+    position: absolute;
+    left: 0; right: 0; top: 60px;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(0,0,0,0.9);
+    text-align: center;
+    padding: 12px 0;
+    z-index: 2000;
+  }
+
+  .top-nav .menu-links.active {
+    display: flex !important;
+  }
+
+  .top-nav .menu-links a {
+    color: #fff;
+    padding: 14px 0;
+    width: 100%;
+    display: block;
+  }
+}
+
+.nav-toggle { display: none; }
+
+@media (max-width: 767px) {
+  .top-nav {
+    position: absolute;
+    width: 100%;
+    z-index: 2000 !important;
+    background: transparent !important;
+  }
+
+  /* Make the button visible and clickable */
+  .nav-toggle {
+    display: block !important;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    z-index: 2001;
+    background: none;
+    border: 0;
+    padding: 8px;
+    cursor: pointer;
+  }
+  .nav-toggle .bar {
+    display: block;
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+  }
+
+  /* Hide links until toggled */
+  .top-nav .menu-links {
+    display: none !important;
+    position: absolute;
+    left: 0; right: 0; top: 60px;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(0,0,0,0.92);
+    text-align: center;
+    padding: 12px 0;
+    z-index: 2000;
+  }
+  .top-nav .menu-links.active {
+    display: flex !important;
+  }
+  .top-nav .menu-links a {
+    color: #fff !important;
+    padding: 14px 0;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+  }
+}
+
+/* Prevent your generic footer nav rule from clobbering the top nav */
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg);
+  font-weight: bold;
+}
+
+/* Hidden by default on desktop */
+.nav-toggle { display: none; background: none; border: 0; padding: 8px; cursor: pointer; }
+.nav-toggle .bar { display: block; width: 26px; height: 3px; background: #fff; margin: 5px 0; transition: .2s; }
+
+/* Ensure the top nav sits above the hero */
+.top-nav { position: absolute; width: 100%; z-index: 2000 !important; background: transparent !important; }
+
+/* PHONE ONLY */
+@media (max-width: 767px) {
+  /* Show the button */
+  .nav-toggle {
+    display: block !important;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    z-index: 2001; /* above the dropdown */
+  }
+
+  /* Hide links until toggled */
+  .top-nav .menu-links {
+    display: none !important;
+    position: absolute;
+    left: 0; right: 0; top: 60px;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(0,0,0,0.4); /* softer transparency */
+    backdrop-filter: blur(4px);
+    text-align: center;
+    padding: 12px 0;
+    z-index: 2000;
+  }
+  .top-nav .menu-links a {
+    color: #fff !important;
+    padding: 14px 0;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+  }
+  .top-nav .menu-links.active { display: flex !important; }
+}
+
+/* Prevent footer nav styles from leaking into header nav */
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  background: var(--bg);
+  font-weight: bold;
+}
+
+/* Desktop CTA stays visible by default */
+.cta-banner {
+  display: flex;
+}
+
+/* Mobile version hidden by default */
+.cta-banner-mobile {
+  display: none;
+}
+
+/* ✅ MOBILE CTA FIX — Full image, no stretching */
+@media (max-width: 767px) {
+
+  /* Hide desktop banner */
+  .cta-banner {
+    display: none;
+  }
+
+  .cta-banner-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Use real <img> instead of background */
+  .cta-banner-mobile img {
+    width: 100%;
+    height: auto; /* ✅ Keeps correct proportions */
+    display: block;
+  }
+
+  .cta-mobile-content {
+    position: absolute;
+    text-align: center;
+    color:#fff;
+  }
+
+  .cta-mobile-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+  }
+
+  .cta-mobile-btn {
+    background-color: #f9f6f2;
+    color: #333;
+    padding: 12px 32px;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    letter-spacing: 1.4px;
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+}
+
+/* --- Mobile contact card  --- */
+@media (max-width: 480px) {
+  .contact-row {
+    background: #fff;         /* page stays white like the mock */
+    padding: 24px 0 0;
+  }
+
+  /* White card */
+  .contact-form {
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 16px;
+  }
+
+  .Contact-Us {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 6px 0 14px;
+    color: #111;
+  }
+
+  .name-rectangle,
+  .subject {
+    width: 100%;
+    height: 34px;                  /* compact inputs */
+    border: 1px solid #bfbfbf;
+    background: #fff;
+    border-radius: 2px;
+    margin: 8px 0;
+    padding: 8px 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+  }
+
+  .message-rectangle {
+    width: 100%;
+    height: 120px;                 /* compact textarea */
+    border: 1px solid #bfbfbf;
+    border-radius: 2px;
+    margin-top: 8px;
+    padding: 8px 10px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    resize: vertical;
+  }
+
+  .Send-Button-BG {
+    width: 100%;
+    height: 36px;
+    margin: 12px 0 4px;
+    background: #d6ede5;          /* soft green like the mock */
+    border: 1px solid #b9d9cb;
+    border-radius: 2px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    color: #2a2a2a;
+  }
+
+  /* Remove leftover two-column layout on mobile */
+  .form-row { display: block; gap: 0; padding: 0; margin: 0; }
+
+  /* Beige social panel below the card */
+  .socialize-panel {
+    background: var(--soft);       /* your beige */
+    margin-top: 16px;
+    padding: 28px 0 32px;
+    text-align: center;
+  }
+
+  .Socialize-With-Us {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #111;
+    margin: 0 0 16px;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .social-icon {
+    width: 18px; height: 18px;
+    opacity: 0.9;
+    transition: transform .2s ease;
+  }
+  .social-icon:hover { transform: scale(1.08); }
+}

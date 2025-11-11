@@ -1,12 +1,15 @@
+/* =========================
+   Tokens / Base
+========================= */
+
 :root {
-  --accent: #cbe3d4;
-  --text: #333;
-  --bg: #fff;
-  --soft: #f9f6f2;
+  --accent: #7a9c87;
+  --accent-soft: #cbe3d4;
   --duck-egg-blue: #d6ede5;
-  --white: #ffffff;
+  --soft: #f9f6f2;
+  --text: #333333;
   --gunmetal: #2e3a3f;
-  --accent: #7a9c87; /* optional for link */
+  --white: #ffffff;
 }
 
 * {
@@ -18,100 +21,44 @@
 body {
   line-height: 1.6;
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--white);
+  font-family: "Lato", sans-serif;
 }
+
+/* =========================
+   HERO
+========================= */
 
 .hero {
   position: relative;
   width: 100%;
   height: 60vh;
+  min-height: 480px;
   overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  top: 0;
-  left: 0;
   z-index: -1;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translate(-50%);
-  color: white;
-  text-align: left;
-  padding: 1rem;
-  max-width: 600px;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  text-align: left;
-  color: white;
-  max-width: 90%;
-  padding: 1rem;
-  padding-left: 2rem;
-}
-
-.hero-text .Find-Your-Peace {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 5rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 3px;
-  color: white;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.your-journey-starts {
-  font-family: "Lato", sans-serif;
-  max-width: 90%;
-  margin: 12px 0 0 0;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  letter-spacing: 1.5px;
-  text-align: left;
-  color: white;
-}
-.menu-icon {
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-}
-header {
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
-}
+/* Top nav over hero */
 
 .top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  z-index: 2000;
   background: transparent;
 }
 
@@ -120,109 +67,321 @@ header p {
   width: auto;
 }
 
+/* Desktop menu */
+
 .menu-links {
-  font-family: "Lato", sans-serif;
   display: flex;
-  justify-content: flex-end;
-  gap: 36px;
-  padding-right: 36px;
+  gap: 32px;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .menu-links a {
   text-decoration: none;
-  color: white;
-  transition: opacity 0.3s ease;
+  color: var(--white);
+  font-size: 0.85rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  transition: opacity 0.25s ease;
 }
 
 .menu-links a:hover {
   opacity: 0.7;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  background: var(--bg);
-  font-weight: bold;
+/* Hamburger (hidden by default on desktop) */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
 }
+
+.nav-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 4px 0;
+  background: #fff;
+  transition: 0.25s ease;
+}
+
+/* Hero text (desktop / tablet default) */
+
+.hero-text {
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+  transform: translateY(0);
+  color: var(--white);
+  max-width: 420px;
+  text-align: left;
+  padding: 0;
+}
+
+.hero-text .Find-Your-Peace {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.4rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .your-journey-starts {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   CONTENT
+========================= */
 
 section {
   padding: 40px 20px;
 }
 
 .intro-section {
-  max-width: 90%;
+  max-width: 720px;
   margin: 60px auto 80px;
   padding: 0 1rem;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.25rem;
   font-weight: 500;
   font-style: italic;
   line-height: 1.5;
   letter-spacing: 2px;
   text-align: center;
-  color: black;
-}
-
-.highlight {
- max-width: 684px; 
-  margin: 38px auto 101px; 
-  padding: 0 1rem; 
-  font-family: Lato, sans-serif;
-  font-size: 1rem; 
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: 1.5px;
-  color: var(--black);
+  color: #000;
 }
 
 .Lotus-heading {
-   font-family: "Cormorant Garamond", serif;
-  font-size: 1.875rem; /* 30px */
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.875rem;
   font-weight: 600;
   font-style: italic;
-  line-height: 1.3;
   letter-spacing: 0.18em;
   color: #5a7669;
-  max-width: 684px;     
-  margin: 20px auto;    
-  padding: 0 1rem;      
-  text-align: left; 
+  max-width: 684px;
+  margin: 20px auto;
+  padding: 0 1rem;
+  text-align: left;
 }
 
+.highlight {
+  max-width: 684px;
+  margin: 38px auto 101px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 1.5px;
+  color: var(--text);
+}
+
+/* Full-width class schedule image */
+
 .class-schedule-feature {
-  width: 100vw;    
-  margin: 0;         
-  padding: 0;        
+  width: 100vw;
+  margin: 0;
+  padding: 0;
 }
 
 .class-schedule-feature img {
   display: block;
-  width: 100vw;      
-  height: auto;      
+  width: 100vw;
+  height: auto;
 }
 
-.footer {
-  background-color: var(--soft);
+/* =========================
+   FOOTER
+========================= */
+
+.footer-nav {
+  background-color: #f9f6f2;       /* soft beige */
+  padding: 40px 20px 24px;
   text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
+}
+
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
 }
 
 .footer-menu {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 10px 0;
-  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  flex-wrap: wrap;
 }
 
 .footer-menu li a {
-  text-decoration: none;
-  color: var(--text);
-  letter-spacing: 1.3px;
+  font-family: "Lato", sans-serif;
   font-size: 13px;
+  letter-spacing: 1.33px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  transition: opacity 0.25s ease;
+}
+
+.footer-menu li a:hover {
+  opacity: 0.6;
+}
+
+.footer-nav p {
+  font-family: "Lato", sans-serif;
+  font-size: 11px;
+  color: #555;
+  margin: 0;
+}
+
+/* =========================
+   MOBILE (<= 767px)
+========================= */
+
+@media (max-width: 767px) {
+  .hero {
+    height: 75vh;
+    min-height: 520px;
+  }
+
+  /* Center hero text on mobile */
+  .hero-text {
+    bottom: auto;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+    text-align: center;
+    padding: 0 1.5rem;
+  }
+
+  .hero-text .Find-Your-Peace {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-text .your-journey-starts {
+    font-size: 0.8rem;
+    letter-spacing: 1.6px;
+  }
+
+  /* Mobile nav: show hamburger, hide menu until active */
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    z-index: 2100;
+  }
+
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    padding: 10px 0;
+    gap: 0;
+    text-align: center;
+    z-index: 2005;
+  }
+
+  .menu-links a {
+    width: 100%;
+    padding: 12px 0;
+    color: #fff;
+    font-size: 0.9rem;
+  }
+
+  .menu-links.active {
+    display: flex;
+  }
+
+  .intro-section {
+    margin: 40px auto 50px;
+    font-size: 1.05rem;
+  }
+
+  .Lotus-heading,
+  .highlight {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-nav {
+    padding: 32px 0 20px;
+  }
+
+  /* 2x2 grid of white tiles */
+  .footer-nav nav {
+    width: 260px;
+    margin: 0 auto 16px;
+  }
+
+  .footer-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;                     /* thin line between tiles */
+    background-color: #f9f6f2;    /* same as footer bg */
+    margin: 0;
+  }
+
+  .footer-menu li {
+    background-color: #ffffff;
+    padding: 16px 0;
+  }
+
+  .footer-menu li a {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 1.6px;
+    color: #333;
+  }
+
+  .footer-nav p {
+    font-size: 9px;
+  }
+}
+
+/* =========================
+   TABLET (768px - 1023px)
+========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-text {
+    bottom: 16%;
+    left: 10%;
+    max-width: 360px;
+  }
+
+  .hero-text .Find-Your-Peace {
+    font-size: 3rem;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1400px) {
+  .hero-text .Find-Your-Peace {
+    font-size: 3.8rem;
+  }
 }

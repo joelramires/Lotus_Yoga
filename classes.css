@@ -1,12 +1,14 @@
+/* =========================
+   Base + Tokens
+========================= */
 :root {
-  --accent: #cbe3d4;
-  --text: #333;
-  --bg: #fff;
-  --soft: #f9f6f2;
+  --accent: #7a9c87;
+  --accent-soft: #cbe3d4;
   --duck-egg-blue: #d6ede5;
-  --white: #ffffff;
+  --soft: #f9f6f2;
+  --text: #333333;
   --gunmetal: #2e3a3f;
-  --accent: #7a9c87; /* optional for link */
+  --white: #ffffff;
 }
 
 * {
@@ -16,102 +18,46 @@
 }
 
 body {
+  font-family: "Lato", sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--white);
 }
+
+/* =========================
+   Hero
+========================= */
 
 .hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
+  min-height: 540px;
   overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  top: 0;
-  left: 0;
   z-index: -1;
 }
 
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translate(-50%);
-  color: white;
-  text-align: left;
-  padding: 1rem;
-  max-width: 600px;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  text-align: left;
-  color: white;
-  max-width: 90%;
-  padding: 1rem;
-  padding-left: 2rem;
-}
-
-.hero-text .Find-Your-Peace {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 5rem;
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: 3px;
-  color: white;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.your-journey-starts {
-  font-family: "Lato", sans-serif;
-  max-width: 90%;
-  margin: 12px 0 0 0;
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-  letter-spacing: 1.5px;
-  text-align: left;
-  color: white;
-}
-.menu-icon {
-  width: 30px;
-  height: auto;
-  cursor: pointer;
-}
-header {
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
-  text-align: center;
-  color: white;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-header p {
-  font-size: 1.2rem;
-}
+/* Top nav over hero */
 
 .top-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  z-index: 2000;
   background: transparent;
 }
 
@@ -120,169 +66,202 @@ header p {
   width: auto;
 }
 
+/* Desktop menu */
+
 .menu-links {
-  font-family: "Lato", sans-serif;
   display: flex;
-  justify-content: flex-end;
-  gap: 36px;
-  padding-right: 36px;
+  gap: 32px;
   align-items: center;
-  flex-wrap: wrap;
+  font-family: "Lato", sans-serif;
 }
 
 .menu-links a {
   text-decoration: none;
-  color: white;
-  transition: opacity 0.3s ease;
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: opacity 0.25s ease;
 }
 
 .menu-links a:hover {
   opacity: 0.7;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  background: var(--bg);
-  font-weight: bold;
+/* Hamburger base (hidden on desktop) */
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
 }
 
-section {
-  padding: 40px 20px;
+.nav-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 4px 0;
+  background: #ffffff;
+  transition: 0.25s ease;
 }
-.quote {
-  background-color: #f2eae3;
-  text-align: center;
-  font-style: italic;
-  padding: 40px 20px;
-  color: var(--text);
+
+/* Hero text */
+
+.hero-text {
+  position: absolute;
+  left: 10%;
+  bottom: 15%;
+  transform: translateY(0);
+  color: var(--white);
+  max-width: 420px;
 }
+
+.hero-text .Find-Your-Peace {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 3.4rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text .your-journey-starts {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   Intro Text Blocks
+========================= */
 
 .intro-section {
-  max-width: 90%;
-  margin: 60px auto 80px;
-  padding: 0 1rem;
+  max-width: 720px;
+  margin: 60px auto;
+  padding: 0 20px;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: 1.25rem;
   font-weight: 500;
   font-style: italic;
-  line-height: 1.5;
-  letter-spacing: 2px;
+  letter-spacing: 1.6px;
   text-align: center;
+  color: var(--gunmetal);
 }
+
+/* =========================
+   Vinyasa / Ashtanga (Left layout)
+========================= */
 
 .left-Green-BG {
   background-color: var(--duck-egg-blue);
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .left-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 1100px;
   margin: 0 auto;
-  flex-wrap: wrap;
-  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
 }
 
 .left-image {
   flex: 1 1 45%;
-  z-index: 1;
 }
 
 .left-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 480px;
   object-fit: cover;
   border-radius: 6px;
 }
 
 .left-Text-BG {
   flex: 1 1 55%;
-  background-color: white;
-  padding: 60px;
-  margin-left: -80px; /* keeps overlapping effect */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 2;
+  background-color: #ffffff;
+  padding: 48px 40px;
+  margin-left: -70px; /* overlap on desktop */
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   position: relative;
-  min-height: 500px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
+
 .left-Text-BG h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--gunmetal);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .left-Text-BG p {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
 }
 
 .left-Text-BG a {
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--accent);
 }
 
+/* =========================
+   Bikram (Right layout)
+========================= */
+
 .Bikram-Green-BG {
   background-color: var(--duck-egg-blue);
-  padding: 100px 20px;
-  display: flex;
-  justify-content: center;
+  padding: 80px 20px;
 }
 
 .bikram-container {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
   align-items: center;
-  position: relative;
+  gap: 40px;
+  flex-wrap: nowrap;
 }
 
 .bikram-text-box {
- flex: 1 1 55%;
-  background-color: white;
-  padding: 60px;
-  margin-right: -60px; /* pulls over image */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  z-index: 2;
+  flex: 1 1 55%;
+  background-color: #ffffff;
+  padding: 48px 40px;
+  margin-right: -70px; /* overlap */
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
   position: relative;
-  min-height: 500px; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .bikram-text-box h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
   font-weight: 500;
   color: var(--gunmetal);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .bikram-text-box p {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 16px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 14px;
 }
 
 .bikram-text-box a {
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--accent);
 }
@@ -290,106 +269,174 @@ section {
 .bikram-image {
   flex: 1 1 45%;
   width: 100%;
-  max-width: 600px;
-  height: auto;
+  max-height: 480px;
   object-fit: cover;
-  z-index: 1;
   border-radius: 6px;
 }
 
-@media (max-width: 768px) {
-  .bikram-container {
-    
-    padding: 0 10px;
-  }
-
-  .bikram-text-box {
-    margin: 0;
-     padding: 32px;
-  }
-
-  
-}
-
-@media (max-width: 768px) {
-  .left-layout {
-    flex-direction: column;
-    padding: 0 10px;
-  }
-
-  .left-Text-BG {
-    padding: 32px;
-    margin-left: 0;
-  }
-  *{
-    box-sizing: revert;
-  }
-
-  
-}
-.class-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  max-width: 1000px;
-  margin: 0 auto;
-  background-color: var(--soft);
-  padding: 20px;
-}
-
-.class-image {
-  flex: 1 1 300px;
-  max-width: 400px;
-  object-fit: cover;
-}
-
-.class-text {
-  flex: 1 1 300px;
-  max-width: 400px;
-  padding: 20px;
-}
-
-.class-text h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.class-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.class-text a {
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.class-text a:hover {
-  text-decoration: underline;
-}
-
+/* =========================
+   Footer
+========================= */
 
 .footer {
   background-color: var(--soft);
+  padding: 40px 20px 28px;
   text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .footer-menu {
+  list-style: none;
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 10px 0;
-  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  flex-wrap: wrap;
 }
 
-.footer-menu li a {
+.footer-menu a {
   text-decoration: none;
-  color: var(--text);
+  font-size: 0.75rem;
   letter-spacing: 1.3px;
-  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.footer-menu a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   MOBILE (<= 767px)
+========================= */
+
+@media (max-width: 767px) {
+  /* Hero height smaller on phones */
+  .hero {
+    height: 70vh;
+    min-height: 520px;
+  }
+
+  .hero-text {
+    left: 50%;
+    bottom: 14%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .hero-text .Find-Your-Peace {
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+  }
+
+  .hero-text .your-journey-starts {
+    font-size: 0.75rem;
+    letter-spacing: 1.8px;
+  }
+
+  /* Show hamburger, hide desktop menu */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    z-index: 2100;
+  }
+
+  .menu-links {
+    display: none; /* hidden until .active */
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    background: rgba(0, 0, 0, 0.55); /* transparent */
+    backdrop-filter: blur(4px);
+    padding: 10px 0;
+    gap: 0;
+    text-align: center;
+    z-index: 2005;
+  }
+
+  .menu-links a {
+    width: 100%;
+    padding: 12px 0;
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+
+  .menu-links.active {
+    display: flex;
+  }
+
+  .intro-section {
+    margin: 40px auto;
+    font-size: 1.05rem;
+  }
+
+  .left-layout,
+  .bikram-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left-Text-BG,
+  .bikram-text-box {
+    margin: 0;
+    padding: 28px 22px;
+    min-height: auto;
+  }
+
+  .left-image img,
+  .bikram-image {
+    max-height: 260px;
+  }
+}
+
+/* =========================
+   TABLET (768px - 1023px)
+========================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero {
+    height: 70vh;
+  }
+
+  .hero-text {
+    left: 10%;
+    bottom: 14%;
+    max-width: 360px;
+  }
+
+  .hero-text .Find-Your-Peace {
+    font-size: 3rem;
+  }
+
+  .intro-section {
+    margin: 50px auto;
+  }
+
+  .left-layout,
+  .bikram-container {
+    gap: 24px;
+  }
+
+  .left-Text-BG,
+  .bikram-text-box {
+    margin-left: -30px;
+    margin-right: -30px;
+    padding: 36px 30px;
+  }
+}
+
+/* =========================
+   LARGE DESKTOP
+========================= */
+
+@media (min-width: 1400px) {
+  .hero-text .Find-Your-Peace {
+    font-size: 4rem;
+  }
 }

@@ -7,6 +7,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="classes.css">
 </head>
+<script>
+  (function () {
+    function initMenu() {
+      const toggle = document.querySelector('.nav-toggle');
+      const menu = document.querySelector('.menu-links');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('active');
+        toggle.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        console.log('menu active?', open);
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMenu);
+    } else {
+      initMenu();
+    }
+  })();
+</script>
 <body>
   <section class="hero">
   <nav class="top-nav">
@@ -22,6 +43,12 @@
       class="logo-img"
     />
     </div>
+<!-- Hamburger button (mobile only) -->
+<button class="nav-toggle" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
     <div class="menu-links">
       <a href="./classes.html">Classes</a>
       <a href="./classes.html">Schedule</a>
